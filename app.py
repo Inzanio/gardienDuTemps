@@ -12,7 +12,7 @@ st.set_page_config(
     page_icon="👮🏻🚨",
 )
 
-st.title("👮🏻Gardien du temps⏳")
+st.title("👮🏻:blue[Gardien] du :green[temps]⏳")
 
 col1, col2 = st.columns(2)
 
@@ -29,7 +29,7 @@ days = delta.days
 today = date.today()
 
 # Afficher le temps total prévu en jours
-st.write(f"Temps total Prévu : :green[{days} jours]")
+st.subheader(f"Temps total Prévu : :green[{days} jours]")
 
 if start_date > end_date:
     st.error("La date de début ne peut pas être après la date de fin.")
