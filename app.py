@@ -16,7 +16,7 @@ st.title("Gardien du temps")
 
 col1, col2 = st.columns(2)
 
-start_date =date(2025, 3, 13) #col1.date_input("Date de début", value=date(2025, 3, 13),format="DD/MM/YYYY")
+start_date =date(2025, 3, 17) #col1.date_input("Date de début", value=date(2025, 3, 13),format="DD/MM/YYYY")
 end_date = date(2025, 8, 16)#col2.date_input("Date de fin", value=date(2025, 8, 16),format="DD/MM/YYYY")
 col1.metric(f"Date Début",value=f"{format_date(start_date,locale='fr_FR')}")
 col2.metric(f"Date de Fin",value=f"{format_date(end_date,locale='fr_FR')}")
