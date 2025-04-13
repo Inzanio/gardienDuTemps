@@ -44,6 +44,6 @@ else:
 
     col1,col2 = st.columns(2)
     # Afficher les résultats
-    col1.metric(f"⏳Temps Ecoulés",value=f"{jours_ecoules} J")
-    col2.metric(f"⏰Temps Restants",value=f"{jours_restants} J")
-    st.metric(f"➡️Avancement",value=f"{(jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
+    col1.metric(f"⏳Temps Ecoulés⏳",value=f"{jours_ecoules} J")
+    col2.metric(f"⏰Temps Restants⏰",value=f"{jours_restants} J")
+    st.metric(f"➡️Avancement➡️",value=f"{(jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
