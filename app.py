@@ -9,10 +9,10 @@ from babel.dates import format_date
 st.set_page_config(
     layout="wide",
     page_title="Gardien Du Temps",
-    #page_icon="logo.png",
+    page_icon="👮🏻🚨",
 )
 
-st.title("Gardien du temps")
+st.title("👮🏻Gardien du temps⏳")
 
 col1, col2 = st.columns(2)
 
