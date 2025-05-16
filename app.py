@@ -50,5 +50,7 @@ else:
     # Afficher les résultats
     col1.metric(f"⏳Temps Ecoulés⏳",value=f"{jours_ecoules} Jours")
     col2.metric(f"⏰Temps Avant Dépôt📥",value=f"{jours_restants} Jours")
-    col1.metric(f"➡️Avancement➡️",value=f"{(jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
+    col1.metric(f"➡️Temps consommé par rapport au dépôt➡️",value=f"{(jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
     col2.metric(f"⏰Temps avant Soutenance👨🏻‍🏫",value=f"{delta_sout} Jours")
+    col1.metric(f"➡️Temps consommé par rapport à la soutenance➡️",value=f"{(delta_sout / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
+    
