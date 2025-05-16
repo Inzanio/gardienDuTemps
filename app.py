@@ -63,7 +63,8 @@ else:
             Temps Ecoulés : {jours_ecoules} jours
             Temps Restant Avant Dépôt : {jours_restants} jours
             Temps consommé par rapport au dépôt : {temps_consomme_par_rapport_depot:.2f} %
-            Temps Restant avant Soutenance : {delta_sout} jours
-            Temps consommé par rapport à la soutenance : {temps_consomme_par_rapport_soutenance:.2f} %
+
             """)
-    
+            
+            # Temps Restant avant Soutenance : {delta_sout} jours
+            # Temps consommé par rapport à la soutenance : {temps_consomme_par_rapport_soutenance:.2f} %
