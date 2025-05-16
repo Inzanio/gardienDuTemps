@@ -60,10 +60,10 @@ else:
     st.code(f"""
             Bonjour !!
             
-            Temps Ecoulés : {jours_ecoules} jours\n
-            Temps Avant Dépôt : {jours_restants} jours\n
-            Temps consommé par rapport au dépôt : {temps_consomme_par_rapport_depot} jours \n
-            ⏰Temps avant Soutenance 👨🏻‍🏫 : {delta_sout} jours \n
-            Temps consommé par rapport à la soutenance : {temps_consomme_par_rapport_soutenance}
+            Temps Ecoulés : {jours_ecoules} jours
+            Temps Restant Avant Dépôt : {jours_restants} jours
+            Temps consommé par rapport au dépôt : {temps_consomme_par_rapport_depot:.2f} %
+            Temps Restant avant Soutenance : {delta_sout} jours
+            Temps consommé par rapport à la soutenance : {temps_consomme_par_rapport_soutenance:.2f} %
             """)
     
