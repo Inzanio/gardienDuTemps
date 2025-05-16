@@ -46,16 +46,24 @@ else:
     jours_restants = delta_fin.days
 
     delta_sout = (soutenance_date-today).days
+    temps_consomme_par_rapport_depot = (jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0
     col1,col2 = st.columns(2)
+    temps_consomme_par_rapport_soutenance =(jours_ecoules / (soutenance_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0
     # Afficher les résultats
     col1.metric(f"⏳Temps Ecoulés⏳",value=f"{jours_ecoules} Jours")
     col2.metric(f"⏰Temps Avant Dépôt📥",value=f"{jours_restants} Jours")
-    col1.metric(f"➡️Temps consommé par rapport au dépôt➡️",value=f"{(jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
+    col1.metric(f"➡️Temps consommé par rapport au dépôt➡️",value=f"{temps_consomme_par_rapport_depot:.2f}%")
     col2.metric(f"⏰Temps avant Soutenance👨🏻‍🏫",value=f"{delta_sout} Jours")
-    col1.metric(f"➡️Temps consommé par rapport à la soutenance➡️",value=f"{(jours_ecoules / (soutenance_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
+    col1.metric(f"➡️Temps consommé par rapport à la soutenance➡️",value=f"{temps_consomme_par_rapport_soutenance:.2f}%")
     
     # copier le résultat
     st.code(f"""
-            Temps Ecoulés : {jours_ecoules}
+            Bonjour !!
+            
+            Temps Ecoulés : {jours_ecoules} jours\n
+            Temps Avant Dépôt : {jours_restants} jours\n
+            Temps consommé par rapport au dépôt : {temps_consomme_par_rapport_depot} jours \n
+            ⏰Temps avant Soutenance 👨🏻‍🏫 : {delta_sout} jours \n
+            Temps consommé par rapport à la soutenance : {temps_consomme_par_rapport_soutenance}
             """)
     
