@@ -17,9 +17,12 @@ st.title("👮🏻:blue[Gardien] du :green[temps]⏳")
 col1, col2 = st.columns(2)
 
 start_date = date(2025, 3, 17) #col1.date_input("Date de début", value=date(2025, 3, 13),format="DD/MM/YYYY")
-end_date = date(2025, 8, 16)#col2.date_input("Date de fin", value=date(2025, 8, 16),format="DD/MM/YYYY")
+end_date = date(2025, 7, 26)#col2.date_input("Date de fin", value=date(2025, 8, 16),format="DD/MM/YYYY")
+
+soutenance_date = date(2025, 8, 16)
+
 col1.metric(f"🚩Date Début",value=f"{format_date(start_date,locale='fr_FR')}")
-col2.metric(f"🏁Date de Fin",value=f"{format_date(end_date,locale='fr_FR')}")
+col2.metric(f"🏁Date de Fin",value=f"{format_date(end_date,locale='fr_FR')}",help="Date limite de dépôt des mémoires")
 # Calculer la différence entre les deux dates
 delta = end_date - start_date
 
@@ -40,10 +43,12 @@ else:
 
     # Calculer la différence entre la date de fin et aujourd'hui
     delta_fin = end_date - today
-    jours_restants = delta_fin.days + 1
+    jours_restants = delta_fin.days
 
+    delta_sout = (soutenance_date-today).days
     col1,col2 = st.columns(2)
     # Afficher les résultats
     col1.metric(f"⏳Temps Ecoulés⏳",value=f"{jours_ecoules} Jours")
-    col2.metric(f"⏰Temps Restants⏰",value=f"{jours_restants} Jours")
-    st.metric(f"➡️Avancement➡️",value=f"{(jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
+    col2.metric(f"⏰Temps Avant Dépôt📥",value=f"{jours_restants} Jours")
+    col1.metric(f"➡️Avancement➡️",value=f"{(jours_ecoules / (end_date - start_date).days) * 100 if (end_date - start_date).days != 0 else 0:.2f}%")
+    col2.metric(f"⏰Temps avant Soutenance👨🏻‍🏫",value=f"{delta_sout} Jours")
